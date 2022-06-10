@@ -4,14 +4,16 @@ import 'package:shop/const/colors.dart';
 // ignore: must_be_immutable
 class UnderlinedPwdInput extends StatefulWidget {
   final String placeholder;
-  // final Function() onChange;
   final Icon icon;
+  TextEditingController? txtCtrl;
+  dynamic Function(String)? onChanged;
 
-  const UnderlinedPwdInput({
+  UnderlinedPwdInput({
     Key? key,
     required this.placeholder,
     required this.icon,
-    // required this.onChange,
+    this.onChanged,
+    this.txtCtrl
   }) : super(key: key);
 
   @override
@@ -30,7 +32,8 @@ class _UnderlinedPwdInputState extends State<UnderlinedPwdInput> {
       )),
       child: TextField(
         obscureText: isObsercure,
-        controller: null,
+        controller: widget.txtCtrl,
+        onChanged: widget.onChanged,
         decoration: InputDecoration(
             hintText: widget.placeholder,
             prefixIcon: IconButton(
@@ -38,10 +41,8 @@ class _UnderlinedPwdInputState extends State<UnderlinedPwdInput> {
               icon: widget.icon,
             ),
             suffixIcon: IconButton(
-              icon: Icon(
-                  isObsercure ? Icons.visibility : Icons.visibility_off),
+              icon: Icon(isObsercure ? Icons.visibility : Icons.visibility_off),
               onPressed: () {
-                // ignore: avoid_print
                 setState(() {
                   isObsercure = !isObsercure;
                 });

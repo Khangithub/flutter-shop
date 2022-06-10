@@ -6,14 +6,15 @@ class UnderlinedInput extends StatefulWidget {
   final String placeholder;
   // final Function() onChange;
   final Icon icon;
-  final bool isPwd;
+  TextEditingController? txtCtrl;
+  dynamic Function(String)? onChanged;
 
-  const UnderlinedInput(
+  UnderlinedInput(
       {Key? key,
       required this.placeholder,
       required this.icon,
-      // required this.onChange,
-      required this.isPwd})
+      this.onChanged,
+      this.txtCtrl})
       : super(key: key);
 
   @override
@@ -21,7 +22,6 @@ class UnderlinedInput extends StatefulWidget {
 }
 
 class _UnderlinedInputState extends State<UnderlinedInput> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,8 +31,9 @@ class _UnderlinedInputState extends State<UnderlinedInput> {
         bottom: BorderSide(width: 1, color: CustomedColors.$black),
       )),
       child: TextField(
-        obscureText: widget.isPwd,
-        controller: null,
+        obscureText: false,
+        controller: widget.txtCtrl,
+        onChanged: widget.onChanged,
         decoration: InputDecoration(
             hintText: widget.placeholder,
             prefixIcon: IconButton(
