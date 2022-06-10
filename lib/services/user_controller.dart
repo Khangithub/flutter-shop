@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class UserController extends GetxController {
-  void lgPwd(username, password) async {
+  void lgPwd(email, password) async {
     var url =
         Uri.parse('https://shopeeholic-server.herokuapp.com/users/login/pwd');
     var response = await http
-        .post(url, body: {'username': username, 'password': password});
+        .post(url, body: {'email': email, 'password': password});
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
   }

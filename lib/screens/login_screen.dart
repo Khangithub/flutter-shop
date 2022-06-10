@@ -17,32 +17,22 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final UserController userCtrl = Get.put(UserController());
+  final emailTxtCtrl = TextEditingController();
+  final pwdTxtCtrl = TextEditingController();
+  String email = '';
+  String password = '';
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the widget tree.
+    emailTxtCtrl.dispose();
+    pwdTxtCtrl.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final UserController userCtrl = Get.put(UserController());
-    final emailTxtCtrl = TextEditingController();
-    final pwdTxtCtrl = TextEditingController();
-
-    @override
-    void _printLatestValue() {
-      print('Second text field: ${emailTxtCtrl.text}');
-    }
-
-    void initState() {
-      super.initState();
-
-      // Start listening to changes.
-      emailTxtCtrl.addListener(_printLatestValue);
-    }
-
-    @override
-    void dispose() {
-      // Clean up the controller when the widget is removed from the widget tree.
-      // This also removes the _printLatestValue listener.
-      emailTxtCtrl.dispose();
-      super.dispose();
-    }
-
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SafeArea(
@@ -67,13 +57,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         placeholder: 'Enter your email',
                         txtCtrl: emailTxtCtrl,
                         onChanged: (text) {
-                          print('my text is $text');
+                          setState(() {
+                            email = text;
+                          });
                         }),
                     UnderlinedPwdInput(
                       icon: const Icon(
                         Icons.key,
                       ),
                       placeholder: 'Enter your password',
+                      onChanged: (text) {
+                        setState(() {
+                          password = text;
+                        });
+                      },
                     ),
                     const SizedBox(
                       height: 40,
@@ -88,7 +85,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           primary: CustomedColors.$black, //Text Color
                           backgroundColor: CustomedColors.$gold,
                           minimumSize: const Size(350, 40)),
-                      onPressed: () {},
+                      onPressed: () async {
+                        userCtrl.lgPwd(email, password);
+                      },
                     ),
                     const SizedBox(
                       height: 30,
