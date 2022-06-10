@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/screens/landing_page.dart';
 import 'package:shop/screens/login_screen.dart';
 
 void main() {
@@ -14,7 +15,10 @@ class MyApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      routes: {
+        '/login': (context) => const LoginScreen(),
+      },
+      home: const LandingScreen(),
     );
   }
 }
