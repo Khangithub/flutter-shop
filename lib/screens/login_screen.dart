@@ -1,13 +1,14 @@
-// ignore_for_file: avoid_print, unused_element
+// ignore_for_file: avoid_print, unused_element, depend_on_referenced_packages, use_build_context_synchronously
 
 import 'package:flutter/material.dart';
 import 'package:shop/components/image_btn.dart';
 import 'package:shop/components/underline_pwd_input.dart';
 import 'package:shop/components/underlined_input.dart';
 import 'package:shop/const/colors.dart';
-// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
+import 'package:shop/models/user_model.dart';
 import 'package:shop/services/user_controller.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -86,7 +87,27 @@ class _LoginScreenState extends State<LoginScreen> {
                           backgroundColor: CustomedColors.$gold,
                           minimumSize: const Size(350, 40)),
                       onPressed: () async {
-                        userCtrl.lgPwd(email, password);
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                  height: 10,
+                                  width: 10,
+                                  color: Colors.transparent,
+                                  child: const Center(
+                                    child: SpinKitRotatingCircle(
+                                      color: Colors.white,
+                                      size: 120.0,
+                                    ),
+                                  ));
+                            });
+
+                        User currentUser =
+                            await userCtrl.lgPwd(email, password);
+
+                        if (currentUser.username != "") {
+                          Navigator.pop(context);
+                        }
                       },
                     ),
                     const SizedBox(
@@ -143,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                             color: Colors.grey, fontWeight: FontWeight.bold),
                       ),
-                    )
+                    ),
                   ]))),
     );
   }
