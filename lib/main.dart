@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/screens/landing_page.dart';
+import 'package:shop/screens/landing_screen.dart';
 import 'package:shop/screens/login_screen.dart';
 
 void main() {
