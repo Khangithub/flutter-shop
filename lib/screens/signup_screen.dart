@@ -1,9 +1,9 @@
 // ignore_for_file: depend_on_referenced_packages, use_build_context_synchronously, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:shop/components/go_back_top_left_btn.dart';
-import 'package:shop/components/image_btn.dart';
-import 'package:shop/components/underline_pwd_input.dart';
+import 'package:shop/widgets/go_back_top_left_btn.dart';
+import 'package:shop/widgets/image_btn.dart';
+import 'package:shop/widgets/underline_pwd_input.dart';
 import 'package:shop/const/customed_colors.dart';
 import 'package:shop/const/customed_size.dart';
 import 'package:shop/const/customed_style.dart';
@@ -35,6 +35,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
           child: Stack(
         children: <Widget>[

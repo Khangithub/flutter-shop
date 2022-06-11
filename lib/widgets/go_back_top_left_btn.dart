@@ -15,7 +15,7 @@ class GoBackTopLeftBtn extends StatelessWidget {
       child: ElevatedButton(
           onPressed: () => Navigator.pop(context),
           child: Icon(FontAwesomeIcons.arrowLeft, color: CustomedColors.kblack),
-          style: CustomedStyle.roundedBtn(CustomedColors.kgold)),
+          style: CustomedStyle.kroundedBtn(CustomedColors.kgold)),
       top: CustomedSize.kpositionTop,
       left: CustomedSize.kpositionLeft,
       height: 50,

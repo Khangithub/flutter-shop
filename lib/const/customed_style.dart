@@ -11,7 +11,7 @@ class CustomedStyle {
       backgroundColor: CustomedColors.kgold,
       minimumSize: Size(CustomedSize.kwidth, 40));
 
-  static ButtonStyle roundedBtn(Color backgroundColor) => ButtonStyle(
+  static ButtonStyle kroundedBtn(Color backgroundColor) => ButtonStyle(
       backgroundColor: MaterialStateProperty.all(backgroundColor),
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(

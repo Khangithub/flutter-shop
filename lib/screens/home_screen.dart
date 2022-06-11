@@ -2,18 +2,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shop/components/home_carousel.dart';
+import 'package:shop/widgets/home_carousel.dart';
+import 'package:shop/widgets/home_option_listview.dart';
 import 'package:shop/const/customed_colors.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,11 +22,15 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         toolbarHeight: 30,
         backgroundColor: CustomedColors.kamber400,
-        leading: Text('FREESHIP',
-            style: TextStyle(
-                fontSize: 20,
-                fontStyle: FontStyle.italic,
-                color: CustomedColors.kwhite)),
+        leading: Container(
+          margin: const EdgeInsets.only(top: 10, left: 10),
+          child: Text('FREESHIP',
+              style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.w600,
+                  color: CustomedColors.kwhite)),
+        ),
         leadingWidth: 100,
         title: Text(
           'TIKI',
@@ -71,6 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     border: InputBorder.none),
               ),
             ),
+            const SizedBox(height: 6,),
+            OptionListView(),
             HomeCarousel()
           ],
         ),

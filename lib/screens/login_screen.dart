@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print, unused_element, depend_on_referenced_packages, use_build_context_synchronously, sort_child_properties_last, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:shop/components/go_back_top_left_btn.dart';
-import 'package:shop/components/image_btn.dart';
-import 'package:shop/components/loading_dialog.dart';
-import 'package:shop/components/underline_pwd_input.dart';
-import 'package:shop/components/underlined_input.dart';
+import 'package:shop/widgets/go_back_top_left_btn.dart';
+import 'package:shop/widgets/image_btn.dart';
+import 'package:shop/widgets/loading_dialog.dart';
+import 'package:shop/widgets/underline_pwd_input.dart';
+import 'package:shop/widgets/underlined_input.dart';
 import 'package:shop/const/customed_colors.dart';
 import 'package:get/get.dart';
 import 'package:shop/const/customed_size.dart';

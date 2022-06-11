@@ -45,7 +45,7 @@ class HomeCarousel extends StatelessWidget {
           );
         },
         options: CarouselOptions(
-            height: 130,
+            height: 120,
             autoPlay: true,
             // reverse: true,
             enlargeCenterPage: true,

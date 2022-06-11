@@ -11,6 +11,7 @@ class CustomedColors {
   static Color kgrey600 = Colors.grey.shade600;
 
   static Color kamber400 = Colors.amber.shade400;
+  static Color kamber700 = Colors.amber.shade700;
 
   static Color kblue900 = Colors.blue.shade900;
   static Color ktransparent = Colors.transparent;
