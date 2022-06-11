@@ -29,7 +29,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void dispose() {
-    // Clean up the controller when the widget is removed from the widget tree.
     emailTxtCtrl.dispose();
     pwdTxtCtrl.dispose();
     super.dispose();
@@ -43,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Container(
               height: double.infinity,
               width: double.infinity,
-              decoration: const BoxDecoration(color: Colors.white),
+              decoration: BoxDecoration(color: CustomedColors.kwhite),
               child: Stack(
                 children: <Widget>[
                   Column(

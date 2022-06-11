@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shop/components/home_carousel.dart';
 import 'package:shop/const/customed_colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,9 +71,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     border: InputBorder.none),
               ),
             ),
+            HomeCarousel()
           ],
         ),
       ),
     );
   }
 }
+
