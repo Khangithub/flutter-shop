@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print, depend_on_referenced_packages, prefer_final_fields
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shop/const/customed_colors.dart';
 import 'package:shop/screens/home_screen.dart';
 import 'package:shop/screens/info_screen.dart';
 
@@ -78,7 +79,7 @@ class _LandingScreenState extends State<LandingScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue.shade900,
+        selectedItemColor: CustomedColors.kblue900,
         onTap: _onItemTapped,
       ),
     );

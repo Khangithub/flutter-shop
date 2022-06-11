@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shop/const/customed_colors.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -14,33 +15,35 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber.shade400,
+      backgroundColor: CustomedColors.kamber400,
       appBar: AppBar(
         toolbarHeight: 30,
-        backgroundColor: Colors.amber.shade400,
-        leading: const Text('FREESHIP',
+        backgroundColor: CustomedColors.kamber400,
+        leading: Text('FREESHIP',
             style: TextStyle(
                 fontSize: 20,
                 fontStyle: FontStyle.italic,
-                color: Colors.white)),
+                color: CustomedColors.kwhite)),
         leadingWidth: 100,
-        title: const Text(
+        title: Text(
           'TIKI',
           style: TextStyle(
-              fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white),
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: CustomedColors.kwhite),
         ),
-        actions: const <Widget>[
+        actions: <Widget>[
           IconButton(
               onPressed: null,
               icon: Icon(
                 FontAwesomeIcons.bell,
-                color: Colors.white,
+                color: CustomedColors.kwhite,
               )),
           IconButton(
               onPressed: null,
               icon: Icon(
                 FontAwesomeIcons.cartShopping,
-                color: Colors.white,
+                color: CustomedColors.kwhite,
               ))
         ],
         centerTitle: true,
@@ -53,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             Container(
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: CustomedColors.kwhite,
                   borderRadius: BorderRadius.circular(10.0)),
               child: const TextField(
                 obscureText: false,
@@ -66,7 +69,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     border: InputBorder.none),
               ),
             ),
-            
           ],
         ),
       ),

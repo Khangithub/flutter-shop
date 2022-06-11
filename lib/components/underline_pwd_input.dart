@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop/const/colors.dart';
+import 'package:shop/const/customed_colors.dart';
+import 'package:shop/const/customed_size.dart';
 
 // ignore: must_be_immutable
 class UnderlinedPwdInput extends StatefulWidget {
@@ -25,10 +26,10 @@ class _UnderlinedPwdInputState extends State<UnderlinedPwdInput> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
+      width: CustomedSize.kwidth,
       decoration: BoxDecoration(
           border: Border(
-        bottom: BorderSide(width: 1, color: CustomedColors.$black),
+        bottom: BorderSide(width: 1, color: CustomedColors.kblack),
       )),
       child: TextField(
         obscureText: isObsercure,

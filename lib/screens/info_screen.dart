@@ -5,6 +5,6 @@ class InfoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(onPressed: () => Navigator.pushNamed(context, '/login'), child: Text('data'));
+    return SafeArea(child: TextButton(onPressed: () => Navigator.pushNamed(context, '/login'), child: Text('data')));
   }
 }
